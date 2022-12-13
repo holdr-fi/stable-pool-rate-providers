@@ -11,6 +11,7 @@ Using getPriceUnsafe() function - Unsafe seems to mean taking a price that gets 
 # Deployment Addresses
 
 USDCRateProvider deployed to 0x6D80Dc92E4599ADBaE3E4797EBE79c29d0f4c344
+
 USDTRateProvider deployed to 0x8caCbA163be8070760F6DdADA7461a558519A9F1
 
 # Resources
