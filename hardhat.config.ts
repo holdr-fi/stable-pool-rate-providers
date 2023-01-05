@@ -24,7 +24,7 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      aurora: '1GTCE141ABWQGYSH4V47WG3KXAFFB125RC',
+      aurora: process.env.AURORASCAN_API_KEY || '',
     },
   },
   gasReporter: {

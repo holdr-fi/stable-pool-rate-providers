@@ -18,6 +18,7 @@ contract USDTRateProvider {
     bytes32 priceID = 0x2b89b9dc8fdf9f34709a5b106b472f0f39bb6ca9ce04b0fd7f2e971688e2e53b;
     // USDC price ID as per https://pyth.network/developers/price-feed-ids#pyth-evm-mainnet
     PythStructs.Price memory priceData = pyth.getPriceUnsafe(priceID);
-    return uint256(uint64(priceData.price));
+    // Pyth USDT price must be multiplied by 1e10 to accommodate Balancer contracts and frontend.
+    return uint256(uint64(priceData.price) * 1e10);
   }
 }

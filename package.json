@@ -22,6 +22,7 @@
     "moralis": "^2.8.2"
   },
   "scripts": {
+    "deploy": "npx hardhat run scripts/deploy.ts --network aurora",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix"
   }

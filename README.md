@@ -10,9 +10,17 @@ Using getPriceUnsafe() function - Unsafe seems to mean taking a price that gets 
 
 # Deployment Addresses
 
-USDCRateProvider deployed to 0x6D80Dc92E4599ADBaE3E4797EBE79c29d0f4c344
+**Current Deployments**
 
-USDTRateProvider deployed to 0x8caCbA163be8070760F6DdADA7461a558519A9F1
+USDCRateProvider deployed to 0x6e2f7a0291872380292b40dEaC7F4dcD587daaAB
+USDTRateProvider deployed to 0x723Da95511ebe7320AD22D92fa273A0EAf1993D1
+
+**Deprecated Deployments**
+
+*Deprecated 6 Jan 2023 as discovered that Balancer price rate must be normalised to 18 decimal points, and will not accept Pyth price as-if without normalising*
+
+USDCRateProvider deployed to 0x6D80Dc92E4599ADBaE3E4797EBE79c29d0f4c344
+USDTRateProvider deployed to 0x8caCbA163be8070760F6DdADA7461a558519A9F1*
 
 # Resources
 
