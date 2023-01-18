@@ -1,15 +1,18 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-// Gets latest USDT price from Pyth oracle
+// Obtain auUSDT price using Pyth oracle for USDT price, and auUSDT contract for auUSDT/USDT price
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@pythnetwork/pyth-sdk-solidity/IPyth.sol";
 import "@pythnetwork/pyth-sdk-solidity/PythStructs.sol";
+import "./IAuERC20.sol";
 
-contract USDTRateProvider {
+contract auUSDTRateProvider {
   IPyth pyth = IPyth(0xF89C7b475821EC3fDC2dC8099032c05c6c0c9AB9);
+  // auUSDT
+  IAuERC20 auUSDT = IAuERC20(0xaD5A2437Ff55ed7A8Cad3b797b3eC7c5a19B1c54);
 
   constructor() {
   }
@@ -19,6 +22,11 @@ contract USDTRateProvider {
     // USDT price ID as per https://pyth.network/developers/price-feed-ids#pyth-evm-mainnet
     PythStructs.Price memory priceData = pyth.getPriceUnsafe(priceID);
     // Pyth USDT price must be multiplied by 1e10 to accommodate Balancer contracts and frontend.
-    return uint256(uint64(priceData.price) * 1e10);
+    uint256 usdtPrice = uint256(uint64(priceData.price)) * 1e10;
+
+    // USDT amount = auUSDT amount * USDT_per_auUSDT_rate
+    uint256 USDT_per_auUSDT_rate = auUSDT.exchangeRateStored() * 1e2;
+    uint256 auUSDTprice = usdtPrice * USDT_per_auUSDT_rate / 1e18;
+    return auUSDTprice;
   }
 }

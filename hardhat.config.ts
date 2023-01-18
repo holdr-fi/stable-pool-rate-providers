@@ -7,7 +7,7 @@ import 'hardhat-gas-reporter';
 
 const config: HardhatUserConfig = {
   solidity: '0.8.0',
-  defaultNetwork: 'aurora',
+  defaultNetwork: 'hardhat',
   networks: {
     hardhat: {
       forking: {
