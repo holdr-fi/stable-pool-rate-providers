@@ -7,10 +7,10 @@ import "@pythnetwork/pyth-sdk-solidity/IPyth.sol";
 import "@pythnetwork/pyth-sdk-solidity/PythStructs.sol";
 import "./IAuERC20.sol";
 
-contract auUSDTRateProvider {
+contract bastionUSDTRateProvider {
   IPyth pyth = IPyth(0xF89C7b475821EC3fDC2dC8099032c05c6c0c9AB9);
-  // auUSDT
-  IAuERC20 auUSDT = IAuERC20(0xaD5A2437Ff55ed7A8Cad3b797b3eC7c5a19B1c54);
+  // bastion cUSDT
+  IAuERC20 auUSDT = IAuERC20(0x845E15A441CFC1871B7AC610b0E922019BaD9826);
 
   constructor() {
   }

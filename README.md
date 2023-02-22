@@ -20,6 +20,10 @@ auUSDCRateProvider deployed to 0x247f8c7379C71d845687A7d9Ec642C3D09782Aa4
 
 auUSDTRateProvider deployed to 0x9A1671e139332b7BfADc6E15360FD89da4399b52
 
+bastionUSDCRateProvider deployed to 0x22dC4E88cEa43fC873fb5620874A0c45cbBb3635
+
+bastionUSDTRateProvider deployed to 0x9865F88daad003b6F10FF59C0446E3Cd263076Af
+
 **Deprecated Deployments**
 
 *Deprecated 6 Jan 2023 as discovered that Balancer price rate must be normalised to 18 decimal points, and will not accept Pyth price as-if without normalising*
